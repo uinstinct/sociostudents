@@ -1,17 +1,28 @@
 {% extends 'students/base.html'%}
+{% load static %}
+
 {%block content%}
-    <a href={% url 'new_student' %}><button>CREATE NEW STUDENT</button></a>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all_students.css' %}">
+    <title>SocioStudents</title>
+</head>
+    <a href="{% url 'new_student' %}"><button>CREATE NEW STUDENT</button></a>
     <h3>The students are :</h3>
     {%for student in students%}
-        <hr>
-        <a href="{% url 'list_student' username=student.username %}"> Find me out</a><br>
-        <span>Username : {{student.username}} </span><br>
-        <span>Name : {{student.name}} </span><br>
-        <span>Year : {{student.year}} </span><br>
-        <span> My college is {{student.college}} </span><br>
-        <span> My interests are {{student.interests}}</span><br>
-        {% comment %} try to split the interests and skills using commas {% endcomment %}
-        <span> My skills are {{student.skills}}<br>
-        <span> I live in {{student.city}} , {{student.state}} </span><br>
+    <article id="stud">
+
+        <div id="profilePhoto"><img src="https://images.pexels.com/photos/3541388/pexels-photo-3541388.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="profile pic" id="profile_pic" width="30px" height="30px"></div>
+        
+        <div id="details">
+            <span>Name : {{student.name}} </span><br>
+
+            <span>Year : {{student.year}} </span><br>
+
+            <span> My college is {{student.college}} </span><br>
+
+            <span>Find out <a href="{%url 'list_student' username=student.username %}">@{{student.username}}</a> </span><br>
+        </div>
+
+    </article>
     {%endfor%}
-{%endblock%}    
+{%endblock%}   

@@ -13,7 +13,7 @@ def all_students(request):
 
 def list_student(request, username):
     student =  get_object_or_404(Student, username=username)
-    return render(request, 'students/list_student.html', {'student':student})
+    return render(request, 'students/profilepage.html', {'student':student})
 
 def new_student(request):
     form = StudentForm()
