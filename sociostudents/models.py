@@ -13,4 +13,4 @@ class Student(models.Model):
     city=models.TextField()
     state=models.TextField()
     def __str__(self):
-        return self.name
+        return self.username

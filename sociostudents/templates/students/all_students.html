@@ -1,5 +1,6 @@
 {% extends 'students/base.html'%}
 {%block content%}
+    <a href={% url 'new_student' %}><button>CREATE NEW STUDENT</button></a>
     <h3>The students are :</h3>
     {%for student in students%}
         <hr>
@@ -13,4 +14,4 @@
         <span> My skills are {{student.skills}}<br>
         <span> I live in {{student.city}} , {{student.state}} </span><br>
     {%endfor%}
-{%endblock%}
+{%endblock%}    
