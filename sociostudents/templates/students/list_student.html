@@ -1,9 +1,6 @@
 {% extends 'students/base.html'%}
 {%block content%}
-    <h3>The students are :</h3>
-    {%for student in students%}
-        <hr>
-        <a href="{% url 'list_student' username=student.username %}"> Find me out</a><br>
+        <h4>You are viewing {{student.name}} </h4>
         <span>Username : {{student.username}} </span><br>
         <span>Name : {{student.name}} </span><br>
         <span>Year : {{student.year}} </span><br>
@@ -12,5 +9,4 @@
         {% comment %} try to split the interests and skills using commas {% endcomment %}
         <span> My skills are {{student.skills}}<br>
         <span> I live in {{student.city}} , {{student.state}} </span><br>
-    {%endfor%}
 {%endblock%}
