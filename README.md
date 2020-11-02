@@ -1,7 +1,7 @@
-#SOCIOSTUDENTS
+# SOCIOSTUDENTS
 
-##A web application created for students to get social and know each other better. 
+## A web application created for students to get social and know each other better. 
 
-###Created using Djnago
+### Created using Django
 
-###Database used is SQLLite3
+### Database - SQLLite3
